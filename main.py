@@ -3,9 +3,8 @@ from calculator import Calculator
 
 from utils import get_numbers, save_result, handle_command
 
-calc = Calculator()
 
-def show_results(a, b):
+def show_results(calc,a, b):
     add_result = calc.add(a, b)
     multiply_result = calc.multiply(a, b)
     
@@ -25,8 +24,11 @@ def show_results(a, b):
     except ZeroDivisionError:
         print("cannnot divide by zero.")
         
-
-while True:
+def main():
+ calc = Calculator()
+    
+ while True:
+     
     command = input("Press Enter to calculate, or type help: ")
     
     
@@ -44,6 +46,9 @@ while True:
         print("Please enter valid number.")
         continue
 
-    show_results(a, b)
+    show_results(calc, a, b)
+
+if __name__ == "__main__":
+    main()
     
     
